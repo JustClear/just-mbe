@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Ice</title>
+    <link rel="stylesheet" href="../dist/css/ice.css">
+    <script>
+    (function() {
+        var docElement = document.documentElement,
+            timer;
+        var refreshRem = function () {
+            var winWidth = docElement.getBoundingClientRect().width || 320,
+                fontSize = winWidth / 320 * 20;
+            fontSize = fontSize > 40 ? 40 : fontSize; //限制最大宽度640
+            docElement.style.fontSize = fontSize + 'px';
+            window.fontSize = fontSize;
+        };
+        window.addEventListener('resize', function() {
+            clearTimeout(timer);
+            timer = setTimeout(refreshRem, 100);
+        }, false);
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                clearTimeout(timer);
+                timer = setTimeout(refreshRem, 100);
+            }
+        }, false);
+        refreshRem();
+    })();
+    </script>
+</head>
+<body>
+    <div class="board">
+        <div class="ice">
+            <div class="body"></div>
+            <div class="border"></div>
+            <div class="border-2"></div>
+            <div class="border-3"></div>
+            <div class="popsicle"></div>
+            <div class="face">
+                <div class="mouth"></div>
+            </div>
+        </div>
+        <div class="effect">
+            <span class="circle-1"></span>
+            <span class="circle-2"></span>
+            <span class="dot-1"></span>
+            <span class="dot-2"></span>
+            <span class="dot-3"></span>
+            <span class="dot-4"></span>
+            <span class="dot-5"></span>
+            <span class="star-1"></span>
+            <span class="star-2"></span>
+            <span class="star-3"></span>
+            <span class="star-4"></span>
+        </div>
+        <div class="ground"></div>
+    </div>
+</body>
+</html>

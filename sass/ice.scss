@@ -1,0 +1,399 @@
+/*/
+/!/ Ice
+/*/
+
+@import "_global";
+
+@mixin ice-radius {
+    border-top-left-radius: rem(120) rem(120);
+    border-top-right-radius: rem(120) rem(120);
+    border-bottom-right-radius: rem(50) rem(50);
+    border-bottom-left-radius: rem(50) rem(50);
+}
+
+$size-border: rem(14);
+$color-border: #000;
+
+.board {
+    background-color: #fff;
+}
+
+.effect {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+    .circle-1 {
+        @include circle(#ff8302, 20);
+        @include center();
+        margin-top: rem(-140);
+        margin-left: rem(-140);
+    }
+    .circle-2 {
+        @include circle(#48c0ff, 30);
+        @include center();
+        margin-top: rem(-170);
+        margin-left: rem(170);
+    }
+    .dot-1 {
+        @include dot(#ffdc02, 4);
+        @include center();
+        margin-top: rem(-70);
+        margin-left: rem(-160);
+    }
+    .dot-2 {
+        @include dot(#ffdc02, 4);
+        @include center();
+        margin-top: rem(-70);
+        margin-left: rem(170);
+    }
+    .dot-3 {
+        @include dot(#ff8302, 8);
+        @include center();
+        margin-top: rem(-50);
+        margin-left: rem(-150);
+    }
+    .dot-4 {
+        @include dot(#ff8302, 8);
+        @include center();
+        margin-top: rem(-100);
+        margin-left: rem(190);
+    }
+    .dot-5 {
+        @include dot(#ff8302, 8);
+        @include center();
+        margin-top: rem(-205);
+        margin-left: rem(-60);
+    }
+    .star-1 {
+        @include star(#45bffe, 16);
+        @include center();
+        margin-top: rem(-100);
+        margin-left: rem(-130);
+    }
+    .star-2 {
+        @include star(#ff8603, 14);
+        @include center();
+        margin-top: rem(-230);
+        margin-left: rem(70);
+    }
+    .star-3 {
+        @include star(#ffdb03, 22);
+        @include center();
+        margin-top: rem(-215);
+        margin-left: rem(120);
+    }
+    .star-4 {
+        @include star(#2c97f5, 20);
+        @include center();
+        margin-top: rem(-60);
+        margin-left: rem(210);
+    }
+}
+
+.ground {
+    @include centerX();
+    bottom: rem(50);
+    width: rem(290);
+    height: $size-border;
+    border-radius: $size-border;
+    background: $color-border;
+    &:before,
+    &:after {
+        position: absolute;
+        bottom: 0;
+        content: '';
+        display: block;
+        height: $size-border;
+        background: $color-border;
+        border-radius: $size-border;
+    }
+    &:before {
+        left: rem(-40);
+        width: rem(30);
+    }
+    &:after {
+        right: rem(-40);
+        width: rem(20);
+    }
+}
+
+.ice {
+    $width-ice: rem(200);
+    $height-ice: rem(270);
+    $width-body: rem(220);
+    $height-body: rem(300);
+    $color-body: #48bdff;
+    @include center();
+    @include ice-radius();
+    width: $width-ice;
+    height: $height-ice;
+    animation: hover 3s ease-in-out infinite;
+
+    @keyframes hover {
+        0% {
+            margin-top: rem(20);
+        } 50% {
+            margin-top: 0;
+        } 100% {
+        margin-top: rem(20);
+        }
+    }
+
+    &:before {
+        content: '';
+        position: absolute;
+        top: rem(-20);
+        right: rem(-14);
+        width: $width-ice;
+        height: rem(300);
+        margin-top: rem(-20);
+        margin-right: rem(7);
+        border-style: solid;
+        border-color: #2c97f7 #2c97f7 transparent transparent;
+        border-width: rem(0) rem(40) rem(10) rem(0);
+        border-top-left-radius: rem(120) rem(120);
+        border-top-right-radius: rem(120) rem(120);
+        border-bottom-right-radius: rem(70) rem(60);
+        border-bottom-left-radius: rem(70) rem(60);
+        z-index: 1;
+    }
+    .body {
+        position: absolute;
+        top: rem(-14);
+        left: rem(-10);
+        @include ice-radius();
+        width: $width-body;
+        height: $height-body;
+        margin-top: rem(-26);
+        margin-left: rem(26);
+        background-color: $color-body;
+    }
+
+    // face
+    $width-face: rem(80);
+    $height-face: rem(30);
+    .face {
+        @include centerX();
+        bottom: rem(90);
+        width: $width-face;
+        height: $height-face;
+        // eye
+        $size-eye: rem(16);
+        $color-eye: #000;
+        &:before,
+        &:after {
+            position: absolute;
+            top: 0;
+            content: '';
+            display: block;
+            width: $size-eye;
+            height: $size-eye;
+            border-radius: rem(8);
+            background: $color-eye;
+            // opacity: 1;
+            // animation: eye 3s infinite;
+            // @keyframes eye {
+            //     0% {
+            //         opacity: 1;
+            //     } 50% {
+            //         opacity: 1;
+            //     } 51% {
+            //         opacity: 0;
+            //     } 60% {
+            //         opacity: 1;
+            //     } 100% {
+            //         opacity: 1;
+            //     }
+            // }
+        }
+        // left eye
+        &:before {
+            left: 0;
+        }
+        // right eye
+        &:after {
+            right: 0;
+        }
+    }
+
+    // mouth
+    $width-mouth: rem(30);
+    $height-mouth: rem(14);
+    $color-mouth: #000;
+    .mouth {
+        @include centerX();
+        top: rem(16);
+        width: $width-mouth;
+        height: $height-mouth;
+        background: $color-mouth;
+        border-top-left-radius: rem(80) rem(80);
+        border-top-right-radius: rem(80) rem(80);
+        border-bottom-right-radius: rem(120) rem(120);
+        border-bottom-left-radius: rem(120) rem(120);
+        animation: mouth 3s infinite ease-in-out -1s;
+        @keyframes mouth {
+            0% {
+                border-bottom-right-radius: rem(120) rem(120);
+                border-bottom-left-radius: rem(120) rem(120);
+                height: rem(12);
+            } 50% {
+                border-bottom-right-radius: rem(200) rem(200);
+                border-bottom-left-radius: rem(200) rem(200);
+                height: rem(14);
+            } 100% {
+                border-bottom-right-radius: rem(120) rem(120);
+                border-bottom-left-radius: rem(120) rem(120);
+                height: rem(12);
+            }
+        }
+        &:before {
+            @include centerX();
+            bottom: 0;
+            content: '';
+            display: block;
+            width: rem(14);
+            height: rem(6);
+            border-radius: rem(3);
+            background: #fe8500;
+        }
+    }
+
+    // popsicle
+    $width-popsicle: rem(50);
+    $height-popsicle: rem(150);
+    $height-popsicle-2: rem(86);
+    $color-popsicle: #3eadfc;
+    .popsicle {
+        position: absolute;
+        bottom: 0;
+        width: $width-popsicle;
+        height: $height-popsicle;
+        border-radius: rem(50) rem(50) 0 0;
+        background-color: $color-popsicle;
+        @include centerX();
+        &:before,
+        &:after {
+            position: absolute;
+            content: '';
+            display: block;
+        }
+        &:before {
+            bottom: rem(-16);
+            left: $size-border;
+            width: rem(22);
+            height: rem(16);
+            background-color: #febe77;
+            z-index: 1;
+        }
+        &:after {
+            bottom: rem(-72);
+            width: $width-popsicle;
+            height: $height-popsicle-2;
+            border: $size-border solid $color-border;
+            box-sizing: border-box;
+            border-radius: 0 0 rem(50) rem(50);
+            background-color: #ffe7cd;
+        }
+    }
+
+    // border
+    .border {
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: $width-ice;
+        height: rem(140);
+        border: $size-border solid $color-border;
+        border-bottom-right-radius: rem(50) rem(50);
+        border-bottom-left-radius: rem(50) rem(50);
+        border-color: transparent transparent $color-border $color-border;
+        margin-left: rem(-14);
+        z-index: 2;
+        &:before,
+        &:after {
+            position: absolute;
+            content: '';
+            display: block;
+            z-index: 2;
+        }
+        &:before {
+            width: $size-border;
+            height: rem(28);
+            border-radius: rem(7);
+            background: $color-border;
+            left: rem(-14);
+            top: rem(-18);
+        }
+        &:after {
+            bottom: rem(-14);
+            right: rem(-14);
+            width: $width-ice;
+            height: rem(70);
+            border: $size-border solid $color-border;
+            border-bottom-right-radius: rem(50) rem(50);
+            border-bottom-left-radius: rem(50) rem(50);
+            border-color: transparent $color-border transparent transparent;
+        }
+    }
+    .border-2 {
+        position: absolute;
+        left: rem(-14);
+        top: rem(-50);
+        bottom: 0;
+        width: $width-ice;
+        height: $width-ice;
+        border-radius: 50%;
+        border: $size-border solid $color-border;
+        border-color: $color-border $color-border transparent transparent;
+        transform: rotate(-45deg);
+        z-index: 2;
+        &:before,
+        &:after {
+            position: absolute;
+            content: '';
+            display: block;
+            width: $size-border;
+            height: $size-border;
+            border-radius: rem(7);
+            background: $color-border;
+            z-index: 2;
+        }
+        &:before {
+            top: rem(15.5);
+            left: rem(19);
+        }
+        &:after {
+            right: rem(27);
+            bottom: rem(-6);
+            height: rem(42);
+            transform: rotate(45deg);
+        }
+    }
+    .border-3 {
+        position: absolute;
+        top: rem(76);
+        left: rem(-14);
+        width: $size-border;
+        height: $size-border;
+        border-radius: rem(7);
+        background: $color-border;
+        z-index: 2;
+        &:before,
+        &:after {
+            position: absolute;
+            top: rem(36);
+            right: rem(-214);
+            content: '';
+            display: block;
+            width: $size-border;
+            height: rem(42);
+            border-radius: rem(7);
+            background: $color-border;
+            z-index: 2;
+        }
+        &:after {
+            top: rem(90);
+        }
+    }
+}

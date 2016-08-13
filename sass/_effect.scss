@@ -1,0 +1,48 @@
+//
+// Effect
+//
+
+@mixin circle($color, $size) {
+    position: absolute;
+    display: inline-block;
+    width: rem($size);
+    height: rem($size);
+    border: rem(6) solid $color;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+@mixin dot($color, $size) {
+    position: absolute;
+    display: inline-block;
+    width: rem($size);
+    height: rem($size);
+    background: $color;
+    border-radius: 50%;
+    box-sizing: border-box;
+}
+
+@mixin star($color, $size) {
+    position: absolute;
+    display: inline-block;
+    width: rem($size);
+    height: rem($size);
+    &:before,
+    &:after {
+        position: absolute;
+        display: block;
+        content: '';
+        background: $color;
+        border-radius: rem($size);
+    }
+    &:before {
+        width: rem($size);
+        height: rem($size / 3);
+        @include centerY();
+    }
+    &:after {
+        width: rem($size / 3);
+        height: rem($size);
+        @include centerX();
+    }
+}

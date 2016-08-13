@@ -1,0 +1,147 @@
+/*/
+/!/ Ice
+/*/
+/*/
+/!/ Global
+/*/
+body { margin: 0; }
+
+.mbe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+
+.board { width: 25rem; height: 15.45rem; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+
+.board { background-color: #fff; }
+
+.effect { position: absolute; width: 100%; height: 100%; z-index: 10; }
+
+.effect .circle-1 { position: absolute; display: inline-block; width: 0.5rem; height: 0.5rem; border: 0.15rem solid #ff8302; border-radius: 50%; box-sizing: border-box; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); margin-top: -3.5rem; margin-left: -3.5rem; }
+
+.effect .circle-2 { position: absolute; display: inline-block; width: 0.75rem; height: 0.75rem; border: 0.15rem solid #48c0ff; border-radius: 50%; box-sizing: border-box; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); margin-top: -4.25rem; margin-left: 4.25rem; }
+
+.effect .dot-1 { position: absolute; display: inline-block; width: 0.1rem; height: 0.1rem; background: #ffdc02; border-radius: 50%; box-sizing: border-box; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); margin-top: -1.75rem; margin-left: -4rem; }
+
+.effect .dot-2 { position: absolute; display: inline-block; width: 0.1rem; height: 0.1rem; background: #ffdc02; border-radius: 50%; box-sizing: border-box; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); margin-top: -1.75rem; margin-left: 4.25rem; }
+
+.effect .dot-3 { position: absolute; display: inline-block; width: 0.2rem; height: 0.2rem; background: #ff8302; border-radius: 50%; box-sizing: border-box; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); margin-top: -1.25rem; margin-left: -3.75rem; }
+
+.effect .dot-4 { position: absolute; display: inline-block; width: 0.2rem; height: 0.2rem; background: #ff8302; border-radius: 50%; box-sizing: border-box; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); margin-top: -2.5rem; margin-left: 4.75rem; }
+
+.effect .dot-5 { position: absolute; display: inline-block; width: 0.2rem; height: 0.2rem; background: #ff8302; border-radius: 50%; box-sizing: border-box; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); margin-top: -5.125rem; margin-left: -1.5rem; }
+
+.effect .star-1 { position: absolute; display: inline-block; width: 0.4rem; height: 0.4rem; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); margin-top: -2.5rem; margin-left: -3.25rem; }
+
+.effect .star-1:before, .effect .star-1:after { position: absolute; display: block; content: ''; background: #45bffe; border-radius: 0.4rem; }
+
+.effect .star-1:before { width: 0.4rem; height: 0.13333rem; position: absolute; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); }
+
+.effect .star-1:after { width: 0.13333rem; height: 0.4rem; position: absolute; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); }
+
+.effect .star-2 { position: absolute; display: inline-block; width: 0.35rem; height: 0.35rem; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); margin-top: -5.75rem; margin-left: 1.75rem; }
+
+.effect .star-2:before, .effect .star-2:after { position: absolute; display: block; content: ''; background: #ff8603; border-radius: 0.35rem; }
+
+.effect .star-2:before { width: 0.35rem; height: 0.11667rem; position: absolute; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); }
+
+.effect .star-2:after { width: 0.11667rem; height: 0.35rem; position: absolute; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); }
+
+.effect .star-3 { position: absolute; display: inline-block; width: 0.55rem; height: 0.55rem; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); margin-top: -5.375rem; margin-left: 3rem; }
+
+.effect .star-3:before, .effect .star-3:after { position: absolute; display: block; content: ''; background: #ffdb03; border-radius: 0.55rem; }
+
+.effect .star-3:before { width: 0.55rem; height: 0.18333rem; position: absolute; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); }
+
+.effect .star-3:after { width: 0.18333rem; height: 0.55rem; position: absolute; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); }
+
+.effect .star-4 { position: absolute; display: inline-block; width: 0.5rem; height: 0.5rem; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); margin-top: -1.5rem; margin-left: 5.25rem; }
+
+.effect .star-4:before, .effect .star-4:after { position: absolute; display: block; content: ''; background: #2c97f5; border-radius: 0.5rem; }
+
+.effect .star-4:before { width: 0.5rem; height: 0.16667rem; position: absolute; top: 50%; -webkit-transform: translateY(-50%); -ms-transform: translateY(-50%); transform: translateY(-50%); }
+
+.effect .star-4:after { width: 0.16667rem; height: 0.5rem; position: absolute; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); }
+
+.ground { position: absolute; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); bottom: 1.25rem; width: 7.25rem; height: 0.35rem; border-radius: 0.35rem; background: #000; }
+
+.ground:before, .ground:after { position: absolute; bottom: 0; content: ''; display: block; height: 0.35rem; background: #000; border-radius: 0.35rem; }
+
+.ground:before { left: -1rem; width: 0.75rem; }
+
+.ground:after { right: -1rem; width: 0.5rem; }
+
+.ice { position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); border-top-left-radius: 3rem 3rem; border-top-right-radius: 3rem 3rem; border-bottom-right-radius: 1.25rem 1.25rem; border-bottom-left-radius: 1.25rem 1.25rem; width: 5rem; height: 6.75rem; -webkit-animation: hover 3s ease-in-out infinite; animation: hover 3s ease-in-out infinite; }
+
+@-webkit-keyframes hover { 0% { margin-top: 0.5rem; }
+  50% { margin-top: 0; }
+  100% { margin-top: 0.5rem; } }
+
+@keyframes hover { 0% { margin-top: 0.5rem; }
+  50% { margin-top: 0; }
+  100% { margin-top: 0.5rem; } }
+
+.ice:before { content: ''; position: absolute; top: -0.5rem; right: -0.35rem; width: 5rem; height: 7.5rem; margin-top: -0.5rem; margin-right: 0.175rem; border-style: solid; border-color: #2c97f7 #2c97f7 transparent transparent; border-width: 0rem 1rem 0.25rem 0rem; border-top-left-radius: 3rem 3rem; border-top-right-radius: 3rem 3rem; border-bottom-right-radius: 1.75rem 1.5rem; border-bottom-left-radius: 1.75rem 1.5rem; z-index: 1; }
+
+.ice .body { position: absolute; top: -0.35rem; left: -0.25rem; border-top-left-radius: 3rem 3rem; border-top-right-radius: 3rem 3rem; border-bottom-right-radius: 1.25rem 1.25rem; border-bottom-left-radius: 1.25rem 1.25rem; width: 5.5rem; height: 7.5rem; margin-top: -0.65rem; margin-left: 0.65rem; background-color: #48bdff; }
+
+.ice .face { position: absolute; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); bottom: 2.25rem; width: 2rem; height: 0.75rem; }
+
+.ice .face:before, .ice .face:after { position: absolute; top: 0; content: ''; display: block; width: 0.4rem; height: 0.4rem; border-radius: 0.2rem; background: #000; }
+
+.ice .face:before { left: 0; }
+
+.ice .face:after { right: 0; }
+
+.ice .mouth { position: absolute; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); top: 0.4rem; width: 0.75rem; height: 0.35rem; background: #000; border-top-left-radius: 2rem 2rem; border-top-right-radius: 2rem 2rem; border-bottom-right-radius: 3rem 3rem; border-bottom-left-radius: 3rem 3rem; -webkit-animation: mouth 3s infinite ease-in-out -1s; animation: mouth 3s infinite ease-in-out -1s; }
+
+@-webkit-keyframes mouth { 0% { border-bottom-right-radius: 3rem 3rem;
+    border-bottom-left-radius: 3rem 3rem;
+    height: 0.3rem; }
+  50% { border-bottom-right-radius: 5rem 5rem;
+    border-bottom-left-radius: 5rem 5rem;
+    height: 0.35rem; }
+  100% { border-bottom-right-radius: 3rem 3rem;
+    border-bottom-left-radius: 3rem 3rem;
+    height: 0.3rem; } }
+
+@keyframes mouth { 0% { border-bottom-right-radius: 3rem 3rem;
+    border-bottom-left-radius: 3rem 3rem;
+    height: 0.3rem; }
+  50% { border-bottom-right-radius: 5rem 5rem;
+    border-bottom-left-radius: 5rem 5rem;
+    height: 0.35rem; }
+  100% { border-bottom-right-radius: 3rem 3rem;
+    border-bottom-left-radius: 3rem 3rem;
+    height: 0.3rem; } }
+
+.ice .mouth:before { position: absolute; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); bottom: 0; content: ''; display: block; width: 0.35rem; height: 0.15rem; border-radius: 0.075rem; background: #fe8500; }
+
+.ice .popsicle { position: absolute; bottom: 0; width: 1.25rem; height: 3.75rem; border-radius: 1.25rem 1.25rem 0 0; background-color: #3eadfc; position: absolute; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); }
+
+.ice .popsicle:before, .ice .popsicle:after { position: absolute; content: ''; display: block; }
+
+.ice .popsicle:before { bottom: -0.4rem; left: 0.35rem; width: 0.55rem; height: 0.4rem; background-color: #febe77; z-index: 1; }
+
+.ice .popsicle:after { bottom: -1.8rem; width: 1.25rem; height: 2.15rem; border: 0.35rem solid #000; box-sizing: border-box; border-radius: 0 0 1.25rem 1.25rem; background-color: #ffe7cd; }
+
+.ice .border { position: absolute; left: 0; bottom: 0; width: 5rem; height: 3.5rem; border: 0.35rem solid #000; border-bottom-right-radius: 1.25rem 1.25rem; border-bottom-left-radius: 1.25rem 1.25rem; border-color: transparent transparent #000 #000; margin-left: -0.35rem; z-index: 2; }
+
+.ice .border:before, .ice .border:after { position: absolute; content: ''; display: block; z-index: 2; }
+
+.ice .border:before { width: 0.35rem; height: 0.7rem; border-radius: 0.175rem; background: #000; left: -0.35rem; top: -0.45rem; }
+
+.ice .border:after { bottom: -0.35rem; right: -0.35rem; width: 5rem; height: 1.75rem; border: 0.35rem solid #000; border-bottom-right-radius: 1.25rem 1.25rem; border-bottom-left-radius: 1.25rem 1.25rem; border-color: transparent #000 transparent transparent; }
+
+.ice .border-2 { position: absolute; left: -0.35rem; top: -1.25rem; bottom: 0; width: 5rem; height: 5rem; border-radius: 50%; border: 0.35rem solid #000; border-color: #000 #000 transparent transparent; -webkit-transform: rotate(-45deg); -ms-transform: rotate(-45deg); transform: rotate(-45deg); z-index: 2; }
+
+.ice .border-2:before, .ice .border-2:after { position: absolute; content: ''; display: block; width: 0.35rem; height: 0.35rem; border-radius: 0.175rem; background: #000; z-index: 2; }
+
+.ice .border-2:before { top: 0.3875rem; left: 0.475rem; }
+
+.ice .border-2:after { right: 0.675rem; bottom: -0.15rem; height: 1.05rem; -webkit-transform: rotate(45deg); -ms-transform: rotate(45deg); transform: rotate(45deg); }
+
+.ice .border-3 { position: absolute; top: 1.9rem; left: -0.35rem; width: 0.35rem; height: 0.35rem; border-radius: 0.175rem; background: #000; z-index: 2; }
+
+.ice .border-3:before, .ice .border-3:after { position: absolute; top: 0.9rem; right: -5.35rem; content: ''; display: block; width: 0.35rem; height: 1.05rem; border-radius: 0.175rem; background: #000; z-index: 2; }
+
+.ice .border-3:after { top: 2.25rem; }
+
+/*# sourceMappingURL=ice.css.map */

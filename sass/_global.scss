@@ -1,0 +1,31 @@
+/*/
+/!/ Global
+/*/
+
+@import "_mixin";
+@import "_effect";
+
+$fontSize: 40;
+@function rem($px) {
+    @return $px / $fontSize * 1rem;
+}
+
+body {
+    margin: 0;
+}
+
+.mbe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.board {
+    $width-board: rem(1000);
+    $height-board: rem(618);
+    width: $width-board;
+    height: $height-board;
+    @include center();
+}
