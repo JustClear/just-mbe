@@ -1,0 +1,25 @@
+{
+  "name": "just-mbe",
+  "version": "1.0.0",
+  "description": "Draw the MBE style painting in scss.",
+  "main": "gulpfile.js",
+  "scripts": {
+    "start": "rm -rf dist && gulp watch"
+  },
+  "keywords": [
+    "MBE"
+  ],
+  "author": "JustClear",
+  "license": "MIT",
+  "devDependencies": {
+    "autoprefixer": "^6.4.0",
+    "cssnano": "^3.7.3",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-postcss": "^6.1.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-sourcemaps": "^1.6.0",
+    "precss": "^1.4.0"
+  }
+}
