@@ -4,13 +4,17 @@
 /*/
 /!/ Global
 /*/
-body { margin: 0; }
+body { margin: 0; background: #fff; }
 
-.mbe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
+.board { position: relative; width: 25rem; height: 15.45rem; margin: 0 auto; }
 
-.board { width: 25rem; height: 15.45rem; position: absolute; top: 50%; left: 50%; -webkit-transform: translate(-50%, -50%); -ms-transform: translate(-50%, -50%); transform: translate(-50%, -50%); }
+.text-center { text-align: center; }
 
-.board { background-color: #fff; }
+.button { display: inline-block; text-decoration: none; padding: 0.25rem 0.75rem; border: 0.1rem solid #000; border-radius: 1.25rem; line-height: 1.25rem; color: #fff; background: #48bdff; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+
+.button:hover { background: #2fb4ff; }
+
+.button:active { background: #15abff; }
 
 .effect { position: absolute; width: 100%; height: 100%; z-index: 10; }
 

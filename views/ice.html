@@ -11,9 +11,9 @@
         var docElement = document.documentElement,
             timer;
         var refreshRem = function () {
-            var winWidth = docElement.getBoundingClientRect().width || 320,
-                fontSize = winWidth / 320 * 20;
-            fontSize = fontSize > 40 ? 40 : fontSize; //限制最大宽度640
+            var winWidth = docElement.getBoundingClientRect().width || 500,
+                fontSize = winWidth / 500 * 20;
+            fontSize = fontSize > 40 ? 40 : fontSize;
             docElement.style.fontSize = fontSize + 'px';
             window.fontSize = fontSize;
         };
@@ -57,6 +57,12 @@
             <span class="star-4"></span>
         </div>
         <div class="ground"></div>
+    </div>
+    <div class="text-center">
+        <a href="https://dribbble.com/shots/2465916-Ice" class="button">Original Shot</a>
+    </div>
+    <div class="text-center">
+        <a href="https://github.com/JustClear/just-mbe" class="button">Github</a>
     </div>
 </body>
 </html>

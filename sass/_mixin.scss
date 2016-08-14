@@ -20,3 +20,22 @@
     top: 50%;
     transform: translateY(-50%);
 }
+
+@mixin button($size-border: 4, $bgColor: #48bdff, $color: #fff) {
+    display: inline-block;
+    text-decoration: none;
+    padding: rem(10) rem(30);
+    border: rem($size-border) solid #000;
+    border-radius: rem(50);
+    line-height: rem(50);
+    color: $color;
+    background: $bgColor;
+    margin-top: rem(20);
+    margin-bottom: rem(20);
+    &:hover {
+        background: darken($bgColor, 5%);
+    }
+    &:active {
+        background: darken($bgColor, 10%);
+    }
+}
