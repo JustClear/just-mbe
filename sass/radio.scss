@@ -1,0 +1,113 @@
+/*/
+/!/ Radio
+/*/
+
+@import "_global";
+
+$color-border: #171543;
+$width-border: rem(5);
+
+.board {
+    background: #f5f4f3;
+    * {
+        box-sizing: border-box;
+    }
+}
+
+.radio {
+    @include centerX;
+    bottom: rem(50);
+    width: rem(600);
+    height: rem(300);
+    background: #ebf2fe;
+    border: $width-border solid $color-border;
+    border-radius: rem(30);
+}
+
+.handle {
+    @include centerX;
+    top: rem(-90);
+    width: rem(300);
+    height: rem(90);
+    border: ($width-border * 2) solid $color-border;
+    border-radius: rem(30) rem(30) 0 0;
+    border-width: ($width-border * 2) ($width-border * 2) $width-border;
+}
+
+.light {
+    $size: rem(24);
+    position: absolute;
+    top: rem(54);
+    right: rem(30);
+    width: $size;
+    height: $size * 3;
+    &:before,
+    &:after {
+        content: '';
+        display: block;
+        width: $size;
+        position: absolute;
+        left: 0;
+        height: $size;
+        border-radius: 50%;
+        border: $width-border solid $color-border;
+    }
+    &:before {
+        top: 0;
+        background: #f65;
+    }
+    &:after {
+        bottom: 0;
+        background: #4d4;
+    }
+}
+
+.horn {
+    $size-horn-small: rem(60);
+    $size-horn-large: rem(150);
+    &-small,
+    &-large {
+        @include centerX;
+        &:before,
+        &:after {
+            content: '';
+            position: absolute;
+            border: $width-border solid $color-border;
+            border-radius: 50%;
+        }
+    }
+    &-small {
+        width: $size-horn-small * 6;
+        height: $size-horn-small;
+        top: rem(20);
+        &:before,
+        &:after {
+            width: $size-horn-small;
+            height: $size-horn-small;
+            background: #4bf;
+        }
+        &:before {
+            left: 0;
+        }
+        &:after {
+            right: 0;
+        }
+    }
+    &-large {
+        width: $size-horn-large * 3;
+        height: $size-horn-large;
+        bottom: rem(30);
+        &:before,
+        &:after {
+            width: $size-horn-large;
+            height: $size-horn-large;
+            background: #39f;
+        }
+        &:before {
+            left: 0;
+        }
+        &:after {
+            right: 0;
+        }
+    }
+}

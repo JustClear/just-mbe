@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Radio</title>
+    <link rel="stylesheet" href="../dist/css/radio.css">
+    <script>
+    (function() {
+        var docElement = document.documentElement,
+            timer;
+        var refreshRem = function () {
+            var winWidth = docElement.getBoundingClientRect().width || 500,
+                fontSize = winWidth / 500 * 20;
+            fontSize = fontSize > 40 ? 40 : fontSize;
+            docElement.style.fontSize = fontSize + 'px';
+            window.fontSize = fontSize;
+        };
+        window.addEventListener('resize', function() {
+            clearTimeout(timer);
+            timer = setTimeout(refreshRem, 100);
+        }, false);
+        window.addEventListener('pageshow', function(event) {
+            if (event.persisted) {
+                clearTimeout(timer);
+                timer = setTimeout(refreshRem, 100);
+            }
+        }, false);
+        refreshRem();
+    })();
+    </script>
+</head>
+<body>
+    <div class="board">
+        <div class="radio">
+            <div class="handle"></div>
+            <div class="light"></div>
+            <div class="horn-small"></div>
+            <div class="horn-large"></div>
+        </div>
+    </div>
+    <div class="text-center">
+        <a href="http://www.ui.cn/detail/161396.html" class="button">Original Shot</a>
+    </div>
+    <div class="text-center">
+        <a href="https://github.com/JustClear/just-mbe" class="button">Github</a>
+    </div>
+</body>
+</html>

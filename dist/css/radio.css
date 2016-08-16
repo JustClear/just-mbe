@@ -1,0 +1,55 @@
+/*/
+/!/ Radio
+/*/
+/*/
+/!/ Global
+/*/
+body { margin: 0; background: #fff; }
+
+.board { position: relative; width: 25rem; height: 15.45rem; margin: 0 auto; }
+
+.text-center { text-align: center; }
+
+.button { display: inline-block; text-decoration: none; padding: 0.25rem 0.75rem; border: 0.1rem solid #000; border-radius: 1.25rem; line-height: 1.25rem; color: #fff; background: #48bdff; margin-top: 0.5rem; margin-bottom: 0.5rem; }
+
+.button:hover { background: #2fb4ff; }
+
+.button:active { background: #15abff; }
+
+.board { background: #f5f4f3; }
+
+.board * { box-sizing: border-box; }
+
+.radio { position: absolute; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); bottom: 1.25rem; width: 15rem; height: 7.5rem; background: #ebf2fe; border: 0.125rem solid #171543; border-radius: 0.75rem; }
+
+.handle { position: absolute; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); top: -2.25rem; width: 7.5rem; height: 2.25rem; border: 0.25rem solid #171543; border-radius: 0.75rem 0.75rem 0 0; border-width: 0.25rem 0.25rem 0.125rem; }
+
+.light { position: absolute; top: 1.35rem; right: 0.75rem; width: 0.6rem; height: 1.8rem; }
+
+.light:before, .light:after { content: ''; display: block; width: 0.6rem; position: absolute; left: 0; height: 0.6rem; border-radius: 50%; border: 0.125rem solid #171543; }
+
+.light:before { top: 0; background: #f65; }
+
+.light:after { bottom: 0; background: #4d4; }
+
+.horn-small, .horn-large { position: absolute; left: 50%; -webkit-transform: translateX(-50%); -ms-transform: translateX(-50%); transform: translateX(-50%); }
+
+.horn-small:before, .horn-small:after, .horn-large:before, .horn-large:after { content: ''; position: absolute; border: 0.125rem solid #171543; border-radius: 50%; }
+
+.horn-small { width: 9rem; height: 1.5rem; top: 0.5rem; }
+
+.horn-small:before, .horn-small:after { width: 1.5rem; height: 1.5rem; background: #4bf; }
+
+.horn-small:before { left: 0; }
+
+.horn-small:after { right: 0; }
+
+.horn-large { width: 11.25rem; height: 3.75rem; bottom: 0.75rem; }
+
+.horn-large:before, .horn-large:after { width: 3.75rem; height: 3.75rem; background: #39f; }
+
+.horn-large:before { left: 0; }
+
+.horn-large:after { right: 0; }
+
+/*# sourceMappingURL=radio.css.map */
